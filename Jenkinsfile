@@ -4,16 +4,27 @@ pipeline {
     }
 
      stages {
+         stage('install dependencies') {
+            steps {
+                sh 'bash scripts/install.sh'
+            }
+         }
         stage('Test') {
             steps {
-                sh 'bash jenkins/milestone-project/palette-generator/script/test.sh'
+                sh 'bash scripts/test.sh'
             }
-         stages {
-        stage('Run') {
+        }
+        stage('deploy') {
             steps {
-                sh 'bash jenkins/milestone-project/palette-generator/script/run.sh'
+                sh 'python3 create.py'
+                sh 'bash scripts/deploy.sh'
             }
-            stage('Push') {
-            steps {
-                sh 'docker push lisaf/milestone-project:latest'
+        }
+            post {
+        always {
+            junit 'junit/test-results.xml'
+            cobertura coberturaReportFile: 'coverage.xml', failNoReports: false
+        }
+
             }
+     }
