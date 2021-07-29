@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-    }
-
      stages {
          stage('install dependencies') {
             steps {
@@ -19,6 +16,7 @@ pipeline {
                 sh 'bash scripts/deploy.sh'
             }
         }
+     }
             post {
         always {
             junit 'junit/test-results.xml'
@@ -26,6 +24,6 @@ pipeline {
         }
 
             }
-     }
+     
 
 }
