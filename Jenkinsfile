@@ -16,7 +16,6 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'python3 create.py'
                 sh 'bash scripts/deploy.sh'
             }
         }
@@ -28,3 +27,5 @@ pipeline {
 
             }
      }
+
+}
