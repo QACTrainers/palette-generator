@@ -13,9 +13,9 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'ssh 18.134.130.28 git clone https://github.com/LisaF1984/palette-generator.git || true'
-                sh 'ssh 18.134.130.28 bash palette-generator/scripts/deploy.sh'
-                sh 'bash palette-generator/scripts/deploy.sh'
+                sh 'ssh 18.134.130.28 git clone https://github.com/LisaF1984/milestone-project/palette-generator.git || true'
+                sh 'ssh 18.134.130.28 bash milestone-project/palette-generator/scripts/deploy.sh'
+                sh 'bash milestone-projectpalette-generator/scripts/deploy.sh'
             }
         }
      }
