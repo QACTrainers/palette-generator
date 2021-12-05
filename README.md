@@ -10,21 +10,26 @@ You are expected to create your job using a Pipeline script (a.k.a. a `Jenkinsfi
 * Run unit tests.
 * Run the application.
 
-Stretch goals for the pipeline are:
-* Publish the unit test and coverage reports using plugins.
-* Create two jobs that are triggered separately for the `main` and `development` branches:
-    * Pushes to `development` should trigger tests to be run and the application to start in a 'staging' environment.
-    
-    * Pushes to `main` should trigger the application to start on a 'production' environment.
+To start working on this project, use this repository as a template to create a version under your own username. You are welcome to make changes to the source code as you wish. Any files relating to your Jenkins deployment pipeline need to be added to this repository.
 
-        > One or both of these 'environments' should be running on a separate VM. Think about how you could get Jenkins to control another machine remotely.
-    
-    * Use the `HOSTNAME` environment variable to display on the webpage whether the application is running on the 'staging' or 'production' environment.
-* Configure Jenkins to notify developers when a job has been completed. This could be via email, a Teams message, a Slack message, etc.
+<details>
+   
+<summary>Click here to view the stretch goals</summary>
+   
+   * Publish the unit test and coverage reports using plugins.
+   * Create two jobs that are triggered separately for the `main` and `development` branches:
+       * Pushes to `development` should trigger tests to be run and the application to start in a 'staging' environment.
+
+       * Pushes to `main` should trigger the application to start on a 'production' environment.
+
+           > One or both of these 'environments' should be running on a separate VM. Think about how you could get Jenkins to control another machine remotely.
+
+       * Use the `HOSTNAME` environment variable to display on the webpage whether the application is running on the 'staging' or 'production' environment.
+   * Configure Jenkins to notify developers when a job has been completed. This could be via email, a Teams message, a Slack message, etc.
 
 The stretch goals for this project are optional, but you are heavily encouraged to implement them!
-
-To start working on this project, please fork this repository. You are welcome to make changes to the source code as you wish. Any files relating to your Jenkins deployment pipeline need to be added to this repository.
+   
+</details>
 
 ## Guidance
 
