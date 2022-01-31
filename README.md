@@ -4,13 +4,13 @@
 
 Your task is to create a CI/CD pipeline with *Jenkins* that will allow your trainer to push up new changes to the repository and see the application running, without the trainer having to make any further configurations.
 
-You are expected to create your job using a Pipeline script (a.k.a. a `Jenkinsfile`) which will allow your trainer to start up a job on their own Jenkins server with minimal configuration. The job should do the following:
-* Be triggered by a webhook.
+You are expected to create a Freestyle job to do the following:
+
 * Clone down the contents of the repository.
 * Run unit tests.
 * Run the application.
 
-To start working on this project, use this repository as a template to create a version under your own username. You are welcome to make changes to the source code as you wish. Any files relating to your Jenkins deployment pipeline need to be added to this repository.
+To start working on this project, use this repository as a template to create a version under your own username. You are welcome to make changes to the source code as you wish.
 
 <details>
    
@@ -18,13 +18,10 @@ To start working on this project, use this repository as a template to create a 
    
    * Publish the unit test and coverage reports using plugins.
    * Create two jobs that are triggered separately for the `main` and `development` branches:
-       * Pushes to `development` should trigger tests to be run and the application to start in a 'staging' environment.
+       * Pushes to `development` should trigger the unit tests and publish the results.
 
-       * Pushes to `main` should trigger the application to start on a 'production' environment.
+       * Pushes to `main` should trigger the application to start as a systemd service.
 
-           > One or both of these 'environments' should be running on a separate VM. Think about how you could get Jenkins to control another machine remotely.
-
-       * Use the `HOSTNAME` environment variable to display on the webpage whether the application is running on the 'staging' or 'production' environment.
    * Configure Jenkins to notify developers when a job has been completed. This could be via email, a Teams message, a Slack message, etc.
 
 The stretch goals for this project are optional, but you are heavily encouraged to implement them!
