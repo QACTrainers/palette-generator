@@ -16,7 +16,7 @@ class TestViews(TestBase):
 
     def test_palette_post(self):
         response = self.client.post(url_for("get_palette"))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 300)
     
     def test_palette_get(self):
         response = self.client.get(url_for("get_palette"), follow_redirects=True)
