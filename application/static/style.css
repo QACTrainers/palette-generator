@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+.body {
+    background-color: pink;
+}
+
 .generate-button {
     background-color: darkslategray;
     color: aquamarine;
